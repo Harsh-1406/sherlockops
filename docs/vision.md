@@ -11,6 +11,6 @@ Production incidents require engineers to manually inspect:
 This investigation process is slow and knowledge-intensive.
 
 ## Solution
-SherlockOps automatically gathers evidence,
+OpsSleuth automatically gathers evidence,
 builds a timeline,
 and generates a root-cause hypothesis.

@@ -1,11 +1,11 @@
 spring:
   application:
-    name: sherlockops
+    name: opssleuth
 
   datasource:
     url: jdbc:postgresql://localhost:5432/sherlockops
-    username: sherlock
-    password: sherlock
+    username: opssleuth
+    password: opssleuth
 
   jpa:
     hibernate:
