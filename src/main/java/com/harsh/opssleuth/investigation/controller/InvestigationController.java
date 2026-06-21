@@ -2,11 +2,15 @@ package com.harsh.opssleuth.investigation.controller;
 
 import com.harsh.opssleuth.investigation.dto.CreateInvestigationRequest;
 import com.harsh.opssleuth.investigation.dto.CreateInvestigationResponse;
+import com.harsh.opssleuth.investigation.dto.InvestigationResponse;
 import com.harsh.opssleuth.investigation.service.InvestigationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/investigations")
@@ -22,5 +26,17 @@ public class InvestigationController {
     ) {
 
         return investigationService.createInvestigation(request);
+    }
+
+    @GetMapping("/{id}")
+    public InvestigationResponse getInvestigation(
+            @PathVariable UUID id
+    ) {
+        return investigationService.getInvestigation(id);
+    }
+
+    @GetMapping
+    public List<InvestigationResponse> getInvestigations() {
+        return investigationService.getInvestigations();
     }
 }
